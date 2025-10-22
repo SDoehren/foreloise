@@ -10,7 +10,7 @@
 </html>
 
 <script>
-    const names = ["Eloise","Eloizzle",""]
+    const names = ["Eloise", "Eloizzle", ""]
     const randomname = Math.floor(Math.random() * names.length);
 
     const messageel = document.getElementById('message');
@@ -23,9 +23,9 @@
 
     const letteratatime = async (message) => {
         for (let i = 0; i < message.length; i++) {
-            if (message[i]==" "){
+            if (message[i] == " ") {
                 let delayres = await delay(75);
-            } else if (message[i]=="x"){
+            } else if (message[i] == "x") {
                 let delayres = await delay(15);
             } else {
                 let delayres = await delay(25);
@@ -43,17 +43,34 @@
 
         var r = Math.random()
 
-        await letteratatime("Hey "+names[randomname])
+        await letteratatime("Hey " + names[randomname])
         message += "<br>"
 
-        const love = ["LOVE YOU!!!","LOVE YOU SO MUCH!!!!","LOVE YOU VERY MUCH!!!","LOVE YOU MORE!","SOOOO"]
+        const love = ["LOVE YOU!!!", "LOVE YOU SO MUCH!!!!", "LOVE YOU VERY MUCH!!!", "LOVE YOU MORE!", "SOOOO", "rah"]
         const randomlove = Math.floor(Math.random() * love.length);
 
-        if (love[randomlove]==="SOOOO"){
+        if (love[randomlove] === "rah") {
+            var l = Math.floor(Math.random() * 500) + 100
+            let delayres = await delay(l);
+
+            await letteratatime("RAH!")
+            message += "<br>"
+
+            l = Math.floor(Math.random() * 1000) + 100
+            delayres = await delay(l);
+
+            while (true) {
+
+                await letteratatime("RAH!")
+                message += "<br>"
+                l = Math.floor(Math.random() * 3000) + 100
+                delayres = await delay(l);
+            }
+        } else if (love[randomlove] === "SOOOO") {
             await letteratatime("LOVE YOU S")
-            var l = Math.floor(Math.random() * 100)+10
+            var l = Math.floor(Math.random() * 100) + 10
             for (let i = 0; i < l; i++) {
-                    await letteratatime("O")
+                await letteratatime("O")
             }
             await letteratatime(" MUCH!")
         } else {
@@ -65,7 +82,7 @@
         await letteratatime("X")
         while (true) {
             for (let i = 0; i < 40; i++) {
-                    await letteratatime("x")
+                await letteratatime("x")
             }
             message += "<br>"
         }
